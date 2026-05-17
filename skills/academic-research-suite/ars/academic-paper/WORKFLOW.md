@@ -20,6 +20,7 @@ A general-purpose academic paper writing tool — 12-agent pipeline covering all
 **v2.5** adds two writing quality features:
 - **Style Calibration** (intake Step 10, optional) — Provide 3+ past papers and the pipeline learns your writing voice (sentence rhythm, vocabulary preferences, citation integration style). Applied as a soft guide during drafting; discipline conventions always take priority. See `shared/style_calibration_protocol.md`.
 - **Writing Quality Check** (`references/writing_quality_check.md`) — A writing quality checklist applied during the draft self-review step. Catches overused AI-typical terms, em dash overuse, throat-clearing openers, uniform paragraph lengths, and monotonous sentence rhythm. These are good writing rules, not detection evasion.
+- **Natural Voice Revision** (`references/human_voice_revision_protocol.md`) — Activated when the user complains that a draft reads as AI-like, generic, too polished, or too formulaic. It reduces template prose by adding task-specific reasoning, close reading, uneven but purposeful sentence rhythm, and calibrated author voice. It must not promise detector evasion.
 
 ## Quick Start
 
@@ -57,6 +58,18 @@ Write a paper on the impact of declining birth rates on private university manag
 Activate `plan` mode when the user wants guidance, step-by-step planning, or expresses uncertainty about paper structure. **Default rule**: when ambiguous between `plan` and `full`, prefer `plan`.
 
 > See `references/plan_mode_protocol.md` for full intent signals and activation rules.
+
+### Natural Voice Activation
+
+Activate the Natural Voice Revision protocol when the user says "AI率太高,"
+"AI味太重," "AIGC痕迹," "太像模板," "too AI-like," "too generic,"
+"humanize," or asks for a more natural classroom/student/author voice.
+
+Before drafting or revising, read
+`references/human_voice_revision_protocol.md`. Prefer `revision` mode if the
+user already has a draft, `revision-coach` mode if they want a diagnosis first,
+and `outline-only` mode if they only have a topic. Avoid `full` mode unless the
+user explicitly requests a complete paper from scratch.
 
 ### Does NOT Trigger
 
@@ -267,6 +280,7 @@ See `references/mode_selection_guide.md` for details.
 | Just need an outline | `outline-only` | balanced |
 | Have a draft, received review feedback | `revision` | fidelity |
 | Have unstructured reviewer comments | `revision-coach` | balanced |
+| Draft feels AI-like, generic, or over-polished | `revision` or `revision-coach` + `human_voice_revision_protocol` | balanced |
 | Just need an abstract | `abstract-only` | fidelity |
 | Need to check/fix citations | `citation-check` | fidelity |
 | Need to convert format (LaTeX, DOCX) or citation style | `format-convert` | fidelity |
@@ -370,6 +384,7 @@ Explicit prohibitions to prevent common failure modes:
 2. **Zero citation orphans** — in-text citations <-> reference list must perfectly match
 3. **Consistent register** — academic tone appropriate for the discipline
 4. **Logical flow** — clear transitions between paragraphs and sections
+5. **Natural voice when requested** — if Natural Voice Revision is active, reduce template phrasing, uniform paragraph rhythm, generic "global significance" claims, and unsupported uplift language. Replace them with close reading, discipline-specific evidence, calibrated uncertainty, and the user's own stylistic patterns when available.
 5. **Word count compliance** — within +/-10% of target
 
 ### Bilingual Abstract Quality

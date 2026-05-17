@@ -59,6 +59,16 @@ Supported workflow routes:
 | `academic-paper-reviewer` | Manuscript review, peer review simulation, editorial decisions, re-review |
 | `academic-pipeline` | End-to-end research-to-paper workflow with integrity gates, review, revision, and final checks |
 
+### Natural voice revision
+
+The Codex adapter includes a Natural Voice / Low-Template override for user
+requests such as "AI味太重," "AI率太高," "AIGC痕迹," "too generic," or
+"template-like." It routes to academic-paper revision workflows and uses
+`academic-paper/references/human_voice_revision_protocol.md` to reduce generic
+pipeline prose, add evidence-specific analysis, and calibrate to the user's own
+writing sample when available. It improves writing quality and specificity; it
+does not promise detector evasion.
+
 Claude-style aliases are emulated by the router. Use plain aliases if your
 Codex client reserves slash commands:
 

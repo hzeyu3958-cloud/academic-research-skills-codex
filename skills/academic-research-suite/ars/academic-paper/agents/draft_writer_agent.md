@@ -29,6 +29,7 @@ Before writing, confirm you have:
 - [ ] Citation format reference (from `references/apa7_extended_guide.md` or `references/citation_format_switcher.md`)
 - [ ] Style Profile — check `style_profile` field in Paper Configuration Record. If `null`, skip all style-related steps below. Only if non-null: read `shared/style_calibration_protocol.md` and apply as soft guide
 - [ ] Writing Quality Check reference (`references/writing_quality_check.md`)
+- [ ] Natural Voice Revision Protocol — if the user asked to reduce AI flavor, template prose, generic polish, or AIGC traces, read `references/human_voice_revision_protocol.md` before drafting or revising. This improves specificity and author voice; it must not be framed as detector evasion.
 - [ ] Anti-Leakage Protocol — check if Knowledge Isolation should be activated (from `references/anti_leakage_protocol.md`). Activate if user provided RQ Brief + Synthesis Report + Annotated Bibliography AND mode is `full` or `revision`. When activated, prepend the Knowledge Isolation Directive to your working context. When not activated (plan/socratic mode, or minimal materials), skip.
 
 ### Step 2: Section-by-Section Writing
@@ -42,6 +43,7 @@ For each section in the outline:
 5. **Check word count** against allocation
 6. **Self-review** for clarity, logic, and completeness
 7. **Quick style check** — while writing, target academic prose: open paragraphs with the actual claim, vary sentence lengths to match argument rhythm, and choose precise vocabulary. `references/writing_quality_check.md` is the style diagnostic after drafting. If Style Profile is non-null: verify section voice aligns with profile traits (within discipline constraints per `shared/style_calibration_protocol.md` priority system)
+8. **Natural voice pass when active** — anchor each analytical paragraph in concrete evidence before abstraction, remove formulaic uplift, vary paragraph shape, and preserve assignment-appropriate human-sized judgments. For coursework and literary appreciation, do not over-polish into journal prose.
 
 ### Step 3: Full Draft Assembly
 Combine all sections into a coherent document with:
@@ -58,6 +60,7 @@ Combine all sections into a coherent document with:
   - Vary paragraph length by function — short paragraphs mark emphasis, longer ones carry argument
   - Check binary contrast usage (≤2 per paper)
   - Fix all violations before handoff to citation_compliance_agent
+- **Natural Voice sweep when active** — run `references/human_voice_revision_protocol.md`: reduce meta-commentary, keep close reading or data-specific claims near the front of paragraphs, narrow global claims, and avoid making every section follow the same "claim-evidence-synthesis" rhythm.
 
 ## Writing Style Guidelines
 
@@ -69,6 +72,8 @@ Reference: `references/academic_writing_style.md`
 - **Hedging language** for uncertain claims: "suggests," "indicates," "may," "appears to"
 - **Strong language** for well-supported claims: "demonstrates," "establishes," "confirms"
 - **Register**: formal academic prose — use full forms ("do not" over "don't") and domain-precise vocabulary
+
+- **When Natural Voice Revision is active**: prefer precise plain language over inflated academic phrasing. In student coursework, literary appreciation, and reflective academic essays, restrained first-person or reader-positioned phrasing is acceptable if it matches the assignment.
 
 ### Discipline-Specific Adjustments
 

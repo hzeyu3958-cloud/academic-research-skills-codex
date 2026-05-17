@@ -1,6 +1,6 @@
 ---
 name: academic-research-suite
-description: Codex-native Academic Research Skills suite for deep research, literature reviews, systematic reviews, academic paper drafting, paper revision, citation and integrity checks, manuscript review, peer review simulation, editorial decision letters, and full research-to-paper pipelines. Also use for Claude-style ARS aliases such as ars-plan, /ars-plan, ars-outline, /ars-outline, ars-abstract, /ars-abstract, ars-lit-review, /ars-lit-review, ars-citation-check, /ars-citation-check, ars-disclosure, /ars-disclosure, ars-format-convert, /ars-format-convert, ars-revision-coach, /ars-revision-coach, ars-revision, /ars-revision, ars-full, and /ars-full.
+description: Codex-native Academic Research Skills suite for deep research, literature reviews, systematic reviews, academic paper drafting, natural voice / low-template revision for AI-like drafts, citation and integrity checks, manuscript review, peer review simulation, editorial decision letters, and full research-to-paper pipelines. Also use for Claude-style ARS aliases such as ars-plan, /ars-plan, ars-outline, /ars-outline, ars-abstract, /ars-abstract, ars-lit-review, /ars-lit-review, ars-citation-check, /ars-citation-check, ars-disclosure, /ars-disclosure, ars-format-convert, /ars-format-convert, ars-revision-coach, /ars-revision-coach, ars-revision, /ars-revision, ars-full, and /ars-full.
 ---
 
 # Academic Research Suite for Codex
@@ -31,6 +31,28 @@ Choose the workflow by intent:
 If the request spans multiple workflows, start with
 `ars/academic-pipeline/WORKFLOW.md` unless the user clearly asked for a single
 phase.
+
+## Natural Voice / Low-Template Override
+
+Apply this override before the alias router when the user says a draft has
+"AI flavor," "AI率/AI味太高," "AIGC痕迹," "too polished," "too generic,"
+"template-like," "humanize," or asks for a more student-authored, classroom,
+personal, or non-formulaic voice.
+
+Route to `ars/academic-paper/WORKFLOW.md` and read
+`ars/academic-paper/references/human_voice_revision_protocol.md` before any
+writer, abstract, structure, or revision agent files. Prefer:
+
+1. `revision` mode when the user has a draft.
+2. `revision-coach` mode when the user wants a plan before rewriting.
+3. `outline-only` mode when the user has only a topic.
+
+Do not promise to bypass AI detectors or guarantee a lower detector score.
+Frame the work as reducing template prose, strengthening close reading,
+calibrating to the user's own voice, and improving evidence-specific writing.
+If the user can provide a prior low-AI-rate writing sample, ask for it and use
+it as the style calibration source. If no sample is available, still apply the
+protocol using the task, discipline, and assignment context.
 
 ## Paper Topic Scoping Override
 

@@ -61,6 +61,7 @@
     "Upstream slash commands are vendored as prompt recipes and emulated through the Codex SKILL.md alias router; Codex does not register native slash commands.",
     "Vendored upstream workflow entry files are renamed from SKILL.md to WORKFLOW.md in this Codex package so Codex registers only the root academic-research-suite router skill.",
     "Vague paper-topic requests without a clear research question are routed to deep-research socratic mode before outline, drafting, or full pipeline execution.",
+    "AI-like, generic, or over-polished draft complaints activate the academic-paper Natural Voice Revision protocol, which reduces template prose without promising detector evasion.",
     "Cross-model API behavior is disabled by default and requires explicit user request."
   ]
 }
