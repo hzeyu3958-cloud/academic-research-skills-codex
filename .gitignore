@@ -1,8 +1,6 @@
 .DS_Store
-experiment-agent/
-docs/superpowers/
 
-# Local working context (codex review logs, hand-off prompts, brief drafts).
+# Local working context.
 # Anything under .context/ or .codex-rounds/ is per-session scratch and must
 # not be committed.
 .context/
@@ -10,6 +8,11 @@ docs/superpowers/
 
 # Python bytecode / pytest cache.
 __pycache__/
+.pytest_cache/
+*.pyc
 
-# Private ROADMAP lives in claude-memory-sync (花花/roadmaps/), not this public repo
+# Private notes should not be committed.
 ROADMAP.md
+
+# Keep the Codex package light.
+skills/academic-research-suite/ars/examples/showcase/*.pdf

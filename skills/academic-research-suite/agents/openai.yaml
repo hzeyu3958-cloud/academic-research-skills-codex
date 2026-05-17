@@ -1,0 +1,5 @@
+interface:
+  display_name: "Academic Research Suite"
+  short_description: "Academic research workflows for Codex"
+  brand_color: "#2563EB"
+  default_prompt: "Use $academic-research-suite to plan my paper topic, narrow the research question, and map the evidence I need."

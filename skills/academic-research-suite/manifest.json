@@ -1,0 +1,66 @@
+{
+  "name": "academic-research-suite",
+  "adapter_version": "0.1.0",
+  "version_file": "VERSION",
+  "generated_for": "codex",
+  "generated_date": "2026-05-17",
+  "source_repositories": [
+    {
+      "name": "academic-research-skills",
+      "url": "https://github.com/Imbad0202/academic-research-skills.git",
+      "commit": "6da09b3090264bc288fea87dbe1582cbd222fb66",
+      "included_paths": [
+        "deep-research",
+        "academic-paper",
+        "academic-paper-reviewer",
+        "academic-pipeline",
+        "shared",
+        "scripts",
+        "commands",
+        "hooks",
+        "tests",
+        "examples excluding showcase PDFs",
+        "docs",
+        "top-level README, README.zh-TW, QUICKSTART, SECURITY, NOTICE, CONTRIBUTING, MODE_REGISTRY, POSITIONING",
+        "requirements-dev.txt",
+        "CHANGELOG.md",
+        "LICENSE"
+      ]
+    }
+  ],
+  "excluded_patterns": [
+    ".git",
+    ".github",
+    ".claude",
+    ".claude-plugin",
+    "agents symlink aliases",
+    "skills symlink aliases",
+    "examples/showcase/*.pdf"
+  ],
+  "inactive_upstream_scripts": [
+    {
+      "path": "skills/academic-research-suite/ars/scripts/check_version_consistency.py",
+      "reason": "Requires upstream .claude/CLAUDE.md suite-version table, which is intentionally not vendored in the Codex package."
+    },
+    {
+      "path": "skills/academic-research-suite/ars/scripts/check_spec_consistency.py",
+      "reason": "Requires upstream .claude/CLAUDE.md contract text, which is intentionally not vendored in the Codex package."
+    },
+    {
+      "path": "skills/academic-research-suite/ars/hooks/hooks.json",
+      "reason": "Claude Code plugin hook metadata. Preserved for upstream traceability but not installed or executed by Codex."
+    }
+  ],
+  "packaging": {
+    "type": "single_codex_suite_skill",
+    "entrypoint": "skills/academic-research-suite/SKILL.md",
+    "vendored_root": "skills/academic-research-suite/ars"
+  },
+  "runtime_notes": [
+    "Claude Code agent-team wording is adapted by SKILL.md into Codex inline role-prompt usage.",
+    "Upstream slash commands are vendored as prompt recipes and emulated through the Codex SKILL.md alias router; Codex does not register native slash commands.",
+    "Vendored upstream workflow entry files are renamed from SKILL.md to WORKFLOW.md in this Codex package so Codex registers only the root academic-research-suite router skill.",
+    "Vague paper-topic requests without a clear research question are routed to deep-research socratic mode before outline, drafting, or full pipeline execution.",
+    "Cross-model API behavior is disabled by default and requires explicit user request."
+  ]
+}
